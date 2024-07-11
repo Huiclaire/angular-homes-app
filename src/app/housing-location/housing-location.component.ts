@@ -17,9 +17,12 @@ import { HousingLocation } from '../housing-location';
   `,
   styleUrls: ['./housing-location.component.css']
 })
+
 export class HousingLocationComponent {
   @Input() housingLocation!:HousingLocation;
   // ! == non null decoration, it tells Typescript that the value will
   // not be null or undefined.
-  // Now the component has an input property namde 'housingLocation'.
+  // @Input() decorator: to reveive data from parent component.
+  // housingLocation: property name(can be anything).
+  // HousingLocaion: type of property.
 }

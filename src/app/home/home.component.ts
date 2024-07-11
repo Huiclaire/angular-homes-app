@@ -16,9 +16,14 @@ import { HousingLocation } from '../housing-location';
     </section>
     <section class="results">
       <!-- for loop -->
+      <!-- for data to be displayed -->
       <app-housing-location *ngFor="let housingLocation of housingLocationList"
       [housingLocation]="housingLocation">
       </app-housing-location>
+      <!-- let housingLocation of housingLocationList => Aungular Template Syntax -->
+      <!-- housingLocation => template variable  -->
+      <!-- [housingLocation]="housingLocation" -->
+        <!-- => binds the 'housingLocation' property of the 'housingLocation' variable -->
     </section>
   `,
   styleUrls: ['./home.component.css']
