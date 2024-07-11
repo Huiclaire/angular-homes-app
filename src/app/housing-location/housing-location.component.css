@@ -18,6 +18,8 @@
 
 .listing-location {
   padding: 10px 20px 20px 20px;
+  display: flex;
+  align-items: center;
 }
 
 .listing-location::before {
