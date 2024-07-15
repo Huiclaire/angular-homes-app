@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { HousingService } from '../housing.service';
+import { HousingLocation } from '../housing-location';
 
 @Component({
   selector: 'app-details',
@@ -8,19 +10,27 @@ import { ActivatedRoute } from '@angular/router';
   imports: [CommonModule],
   template: `
     <p>
-      details works! {{ housingLocationId }}
+      details works! {{ housingLocation?.id }}
     </p>
   `,
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
-  route: ActivatedRoute = inject(ActivatedRoute);
   // inject 'ActivatedRoute' into the component
-  housingLocationId = 0;
+  route: ActivatedRoute = inject(ActivatedRoute);
+  // Dependency injection
+  // 1.housingService is an instance of HousingService, which will be injected into the component.
+  // 2.housingLocation is a variable of type HousingLocation | undefined, which will
+  //   store the details of a specific housing location.
+  housingService = inject(HousingService);
+  housingLocation: HousingLocation | undefined;
+  // if housing location is undefined, the id property wont be accessed, to prevent error.
 
+
+  // Constructor initialization
   constructor() {
-    this.housingLocationId = Number(this.route.snapshot.params['id']);
+    const housingLocationId = Number(this.route.snapshot.params['id']);
+    this.housingLocation = this.housingService.
+    getHousingLocationById(housingLocationId);
   }
-  // In DetailsComponent class, to initialize the component & set the value
-  // of the 'housingLocationId'.
 }
