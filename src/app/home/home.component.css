@@ -28,6 +28,9 @@ button {
   .results {
     grid-template-columns: repeat(2, 1fr);
   }
+  input[type="text"] {
+    width: 70%;
+  }
 }
 
 @media (max-width: 499px) {
