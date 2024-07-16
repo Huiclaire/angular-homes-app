@@ -1,3 +1,7 @@
+.listing-all {
+  padding: 48px
+}
+
 .listing-photo {
   height: 600px;
   width: 50%;
@@ -7,9 +11,9 @@
 }
 
 .listing-heading {
-font-size: 48pt;
-font-weight: bold;
-margin-right: 15px;
+  font-size: 48pt;
+  font-weight: bold;
+  margin-right: 15px;
 }
 
 .listing-location::before {
@@ -66,7 +70,7 @@ input {
   border-bottom: solid .3px;
 }
 
-@media (max-width: 1024px0) {
+@media (max-width: 1024px) {
   .listing-photo {
     width: 100%;
     height: 400px;
