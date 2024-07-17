@@ -12,11 +12,9 @@ import { HousingLocation } from './housing-location';
 export class HousingService {
   url = 'http://localhost:3000/locations';
 
-  constructor() { }
-
   // make a call to the web server configured
   // use asynchronous code to make a GET request over HTTP
-  async getAllHousingLocations() : Promise<HousingLocation> {
+  async getAllHousingLocations() : Promise<HousingLocation[]> {
     const data = await fetch(this.url);
     return await data.json() ?? [];
   }
